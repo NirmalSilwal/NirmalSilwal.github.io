@@ -1,0 +1,21 @@
+.experience-card .experience-card-description,
+.experience-card .experience-card-highlights {
+  line-height: 1.55;
+  text-align: left;
+}
+
+.experience-card-highlights {
+  margin: 0 20px 18px 10px;
+  padding-inline-start: 1.4em;
+  font-family: "Google Sans Regular", system-ui, sans-serif;
+}
+
+.experience-card-highlights li + li {
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  .experience-card-highlights {
+    margin-inline: 14px;
+  }
+}
