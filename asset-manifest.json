@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.81dd51dd.chunk.css",
-    "main.js": "/static/js/main.a4889f5b.chunk.js",
+    "main.js": "/static/js/main.276e8e98.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.fe335e26.js",
     "runtime-main.js.map": "/static/js/runtime-main.fe335e26.js.map",
     "static/js/2.02d71be9.chunk.js": "/static/js/2.02d71be9.chunk.js",
@@ -52,13 +52,15 @@
     "static/media/udemy-logo.png": "/static/media/udemy-logo.0ae8fd08.png",
     "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.85434722.svg",
     "static/media/uptu_logo.png": "/static/media/uptu_logo.f37fb825.png",
-    "portfolio-content.js": "/portfolio-content.js"
+    "portfolio-content.js": "/portfolio-content.js",
+    "github-content.js": "/github-content.js"
   },
   "entrypoints": [
     "static/js/runtime-main.fe335e26.js",
     "static/js/2.02d71be9.chunk.js",
     "static/css/main.81dd51dd.chunk.css",
     "portfolio-content.js",
-    "static/js/main.a4889f5b.chunk.js"
+    "github-content.js",
+    "static/js/main.276e8e98.chunk.js"
   ]
 }

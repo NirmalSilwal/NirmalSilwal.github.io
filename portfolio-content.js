@@ -81,10 +81,10 @@ window.portfolioContent = {
     softwareSkills: [],
   },
   experienceSummary: "I build backend software for HP PageWide Press. Before HP, I worked on order fulfillment at The Home Depot through Kforce and modernized mainframe applications for AWS through Virtusa.",
-  projectsSummary: "Explore my open-source system design resources, Java interview preparation projects, and earlier deep learning work.",
+  projectsSummary: "Explore my system design resources, Java and Spring projects, computer science coursework, and earlier deep learning work.",
   contact: {
     description: "Connect with me on LinkedIn or explore my open-source work on GitHub.",
-    location: "Oregon, United States",
-    map: "https://www.google.com/maps/search/?api=1&query=Oregon%2C+United+States",
+    location: "Oregon, USA",
+    map: "https://www.google.com/maps/search/?api=1&query=Oregon%2C+USA",
   },
 };
