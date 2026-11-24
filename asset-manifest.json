@@ -1,8 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.81dd51dd.chunk.css",
-    "main.js": "/static/js/main.e3e384bc.chunk.js",
-    "main.js.map": "/static/js/main.e3e384bc.chunk.js.map",
+    "main.js": "/static/js/main.73dd56d6.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.fe335e26.js",
     "runtime-main.js.map": "/static/js/runtime-main.fe335e26.js.map",
     "static/js/2.02d71be9.chunk.js": "/static/js/2.02d71be9.chunk.js",
@@ -52,12 +51,14 @@
     "static/media/udacitylogo.png": "/static/media/udacitylogo.05f7a913.png",
     "static/media/udemy-logo.png": "/static/media/udemy-logo.0ae8fd08.png",
     "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.85434722.svg",
-    "static/media/uptu_logo.png": "/static/media/uptu_logo.f37fb825.png"
+    "static/media/uptu_logo.png": "/static/media/uptu_logo.f37fb825.png",
+    "portfolio-content.js": "/portfolio-content.js"
   },
   "entrypoints": [
     "static/js/runtime-main.fe335e26.js",
     "static/js/2.02d71be9.chunk.js",
     "static/css/main.81dd51dd.chunk.css",
-    "static/js/main.e3e384bc.chunk.js"
+    "portfolio-content.js",
+    "static/js/main.73dd56d6.chunk.js"
   ]
 }
