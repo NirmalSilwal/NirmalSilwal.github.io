@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.81dd51dd.chunk.css",
-    "main.js": "/static/js/main.ef92f3e2.chunk.js",
+    "main.js": "/static/js/main.b0e93d95.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.fe335e26.js",
     "runtime-main.js.map": "/static/js/runtime-main.fe335e26.js.map",
     "static/js/2.02d71be9.chunk.js": "/static/js/2.02d71be9.chunk.js",
@@ -53,7 +53,9 @@
     "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.85434722.svg",
     "static/media/uptu_logo.png": "/static/media/uptu_logo.f37fb825.png",
     "portfolio-content.js": "/portfolio-content.js",
-    "github-content.js": "/github-content.js"
+    "github-content.js": "/github-content.js",
+    "homepage.css": "/homepage.css",
+    "homepage.js": "/homepage.js"
   },
   "entrypoints": [
     "static/js/runtime-main.fe335e26.js",
@@ -61,6 +63,8 @@
     "static/css/main.81dd51dd.chunk.css",
     "portfolio-content.js",
     "github-content.js",
-    "static/js/main.ef92f3e2.chunk.js"
+    "homepage.css",
+    "homepage.js",
+    "static/js/main.b0e93d95.chunk.js"
   ]
 }

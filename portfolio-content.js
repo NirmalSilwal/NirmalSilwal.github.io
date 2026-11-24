@@ -10,6 +10,11 @@ window.portfolioContent = {
     },
   },
   introduction: "I work on backend software for HP PageWide Press in Oregon. My background spans Java and Spring Boot services, event-driven fulfillment systems, and cloud modernization.",
+  social: {
+    github: "https://github.com/NirmalSilwal",
+    linkedin: "https://www.linkedin.com/in/nirmal-silwal/",
+    email: "mailto:nirmalsilwal2019@gmail.com",
+  },
   workHistory: [
     {
       title: "Senior Software Developer",
