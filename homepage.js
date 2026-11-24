@@ -18,7 +18,7 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
 
   const roleLabels = ["HP PageWide Press", "The Home Depot via Kforce", "AWS via Virtusa"];
   const roleHighlights = [
-    "Backend software for industrial printing.",
+    "Digital Front End development and customer issue resolution across industrial presses.",
     "Spring Boot services for order fulfillment and a Kafka-to-Pub/Sub migration.",
     "COBOL-to-Java modernization, PostgreSQL tuning, and JVM profiling.",
   ];

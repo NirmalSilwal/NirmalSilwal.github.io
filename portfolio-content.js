@@ -9,7 +9,7 @@ window.portfolioContent = {
       url: "https://nirmalsilwal.github.io/",
     },
   },
-  introduction: "I build backend software for HP PageWide Press in Oregon. I work mainly with Java and Spring Boot, with a focus on system design and solving problems in distributed services.",
+  introduction: "I build backend software on the Digital Front End team for HP PageWide Press in Oregon. My background spans Java and Spring Boot development, system design, and troubleshooting distributed systems.",
   social: {
     github: "https://github.com/NirmalSilwal",
     linkedin: "https://www.linkedin.com/in/nirmal-silwal/",
@@ -23,7 +23,14 @@ window.portfolioContent = {
       logo_path: "experience.svg",
       duration: "Present",
       location: "Oregon, United States",
-      description: "I currently develop backend software on the HP PageWide Press (PWP) team in Oregon. PageWide Press is HP’s industrial inkjet printing platform for high-volume production.",
+      description: "Develop, maintain, and support Digital Front End (DFE) software for HP PageWide Press. The DFE processes print jobs and coordinates workflows for high-speed industrial inkjet presses.",
+      highlights: [
+        "Investigate and resolve customer-reported issues across multiple PageWide Press products, including defects in print job submission, workflow orchestration, and press behavior.",
+        "Develop and enhance backend services and microservices with Groovy, Grails, Java, and Kotlin.",
+        "Diagnose issues across application, service, and infrastructure tiers by tracing logs, inspecting MariaDB records, and investigating Linux environments and virtual machines.",
+        "Use Docker, Kubernetes, Jenkins, and CI/CD pipelines to support integration testing, deployments, and production reliability.",
+        "Collaborate with software, firmware, and product engineering teams in two-week Scrum sprints to deliver fixes, enhancements, and production releases.",
+      ],
       color: "#0879bf",
     },
     {
