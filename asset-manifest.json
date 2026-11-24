@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.81dd51dd.chunk.css",
-    "main.js": "/static/js/main.c632894b.chunk.js",
+    "main.js": "/static/js/main.f5902c97.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.fe335e26.js",
     "runtime-main.js.map": "/static/js/runtime-main.fe335e26.js.map",
     "static/js/2.02d71be9.chunk.js": "/static/js/2.02d71be9.chunk.js",
@@ -56,7 +56,8 @@
     "github-content.js": "/github-content.js",
     "homepage.css": "/homepage.css",
     "homepage.js": "/homepage.js",
-    "experience.css": "/experience.css"
+    "experience.css": "/experience.css",
+    "static/media/oregonprofilepic.jpg": "/static/media/oregonprofilepic.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.fe335e26.js",
@@ -67,6 +68,6 @@
     "homepage.css",
     "homepage.js",
     "experience.css",
-    "static/js/main.c632894b.chunk.js"
+    "static/js/main.f5902c97.chunk.js"
   ]
 }

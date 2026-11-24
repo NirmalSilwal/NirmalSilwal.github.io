@@ -145,6 +145,12 @@ window.portfolioContent = {
   projectsSummary: "Explore backend development with Java and Spring, system design resources, and data structure and algorithm practice. You’ll also find my graduate coursework and earlier deep learning projects.",
   contact: {
     description: "Connect with me on LinkedIn or explore my open-source work on GitHub.",
+    photo: {
+      src: "/static/media/oregonprofilepic.jpg",
+      alt: "Nirmal Silwal looking out over the Oregon coast at sunset",
+      width: 900,
+      height: 1200,
+    },
     location: "Oregon, USA",
     map: "https://www.google.com/maps/search/?api=1&query=Oregon%2C+USA",
   },
