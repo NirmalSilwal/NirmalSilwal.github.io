@@ -11,8 +11,9 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
     ["Contact", "#/contact"],
   ];
   const homepageProjects = [
+    { name: "dockerizing-spring-boot-app", title: "Dockerizing Spring Boot", topic: "Software development" },
     { name: "system-design-resources", title: "System Design Resources", topic: "System design" },
-    { name: "Data-Structure-and-Algorithm-Java-interview-kit", title: "Java Interview Kit", topic: "Java" },
+    { name: "Data-Structure-and-Algorithm-Java-interview-kit", title: "Java Interview Kit", topic: "Problem solving" },
   ];
 
   const roleLabels = ["HP PageWide Press", "The Home Depot via Kforce", "AWS via Virtusa"];
@@ -67,6 +68,17 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
                 h("p", { className: "ph-date" }, role.duration)
               )
             )
+          )
+        ),
+        h("section", { className: "ph-section ph-case", "aria-labelledby": "ph-case-title" },
+          h("div", null,
+            h("p", { className: "ph-topic" }, "System design in practice"),
+            h("h2", { id: "ph-case-title" }, "Reliable order events")
+          ),
+          h("div", { className: "ph-case-detail" },
+            h("p", null, "At The Home Depot through Kforce, I built Spring Boot services for shipment and return events and migrated event processing from Kafka to Google Cloud Pub/Sub."),
+            h("p", null, "Duplicate events needed to be safe to process, transient failures needed a retry, and messages that couldn’t be processed needed a place for investigation. I implemented idempotent handling, retries, and dead-letter routing."),
+            h("a", { href: "#/experience" }, "More about this role ↗")
           )
         ),
         h("section", { className: "ph-section", "aria-labelledby": "ph-projects" },

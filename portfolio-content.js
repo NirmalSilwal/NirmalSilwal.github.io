@@ -9,7 +9,7 @@ window.portfolioContent = {
       url: "https://nirmalsilwal.github.io/",
     },
   },
-  introduction: "I work on backend software for HP PageWide Press in Oregon. My background spans Java and Spring Boot services, event-driven fulfillment systems, and cloud modernization.",
+  introduction: "I build backend software for HP PageWide Press in Oregon. I work mainly with Java and Spring Boot, with a focus on system design and solving problems in distributed services.",
   social: {
     github: "https://github.com/NirmalSilwal",
     linkedin: "https://www.linkedin.com/in/nirmal-silwal/",
@@ -111,7 +111,7 @@ window.portfolioContent = {
   },
   experienceSubtitle: "Backend Engineering and Cloud Modernization",
   experienceSummary: "I’m a Senior Software Developer at HP in Oregon, building backend software for PageWide Press. My previous work includes Spring Boot services for The Home Depot’s order-fulfillment platform and COBOL-to-Java modernization with the AWS Blu Age team.",
-  projectsSummary: "Explore my system design resources, Java and Spring projects, computer science coursework, and earlier deep learning work.",
+  projectsSummary: "Explore backend development with Java and Spring, system design resources, and data structure and algorithm practice. You’ll also find my graduate coursework and earlier deep learning projects.",
   contact: {
     description: "Connect with me on LinkedIn or explore my open-source work on GitHub.",
     location: "Oregon, USA",

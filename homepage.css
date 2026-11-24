@@ -39,7 +39,12 @@ body:has(.portfolio-home) { background: #f8f7f3; }
 .ph-job, .ph-highlight, .ph-date, .ph-project-summary { color: var(--ph-muted); line-height: 1.5; margin: 0; }
 .ph-job { margin-top: 4px; }
 .ph-date { text-align: right; font-size: .88rem; }
-.ph-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ph-case { display: grid; grid-template-columns: 1fr 1.35fr; gap: 24px clamp(24px, 5vw, 72px); }
+.ph-case h2 { margin: 10px 0 0; font: 400 clamp(2.2rem, 4vw, 3.25rem)/1.1 Georgia, serif; letter-spacing: -.045em; }
+.ph-case-detail { max-width: 58ch; color: var(--ph-muted); line-height: 1.6; }
+.ph-case-detail p { margin: 0 0 12px; }
+.ph-case-detail a { color: var(--ph-accent); text-underline-offset: 4px; font-size: .9rem; }
+.ph-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .ph-project { display: grid; gap: 9px; align-content: start; padding: clamp(18px, 3vw, 28px); border: 1px solid var(--ph-line); background: #fff; border-radius: 7px; }
 .ph-project h3 a { text-underline-offset: 4px; }
 .ph-project h3 a:hover { color: var(--ph-accent); }
@@ -52,5 +57,5 @@ body:has(.portfolio-home) { background: #f8f7f3; }
   .ph-portrait { aspect-ratio: 5 / 4; }
   .ph-roles li { grid-template-columns: 1fr; gap: 5px; }
   .ph-date { text-align: left; }
-  .ph-projects { grid-template-columns: 1fr; }
+  .ph-case, .ph-projects { grid-template-columns: 1fr; }
 }
