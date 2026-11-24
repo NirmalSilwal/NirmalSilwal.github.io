@@ -47,9 +47,6 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
               h("a", { className: "ph-button", href: "#/experience" }, "View experience", h("span", { "aria-hidden": true }, "↗")),
               h("a", { className: "ph-secondary", href: "#/projects" }, "Explore projects")
             )
-          ),
-          h("figure", { className: "ph-portrait" },
-            h("img", { src: "/static/media/nirmal-profile.ecd56e4e.jpg", alt: "Nirmal Silwal standing by a waterfall", width: 1250, height: 1373 })
           )
         ),
         h("section", { className: "ph-section", "aria-labelledby": "ph-work" },
