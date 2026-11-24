@@ -19,6 +19,9 @@
 .px-description, .px-highlights { margin: 14px 0 0; line-height: 1.58; }
 .px-highlights { padding-inline-start: 1.25em; color: var(--ph-muted); }
 .px-highlights li + li { margin-top: 7px; }
+.px-detail { margin-top: 19px; }
+.px-detail h4 { margin: 0; font-size: 1.04rem; }
+.px-detail .px-highlights { margin-top: 6px; }
 .px-internship-history .px-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .px-internship-history .px-dates { text-align: left; }
 .px-extracurriculars .px-card { background: #eef2fc; }

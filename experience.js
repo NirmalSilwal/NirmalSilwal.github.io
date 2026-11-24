@@ -1,6 +1,10 @@
 window.renderPortfolioExperience = function renderPortfolioExperience(h) {
   const profile = window.portfolioContent;
 
+  function highlights(items) {
+    return h("ul", { className: "px-highlights" }, items.map(text => h("li", { key: text }, text)));
+  }
+
   function experienceCard(role) {
     return h("article", { className: "px-card", key: role.company },
       h("header", { className: "px-card-header" },
@@ -15,8 +19,14 @@ window.renderPortfolioExperience = function renderPortfolioExperience(h) {
       ),
       h("p", { className: "px-description" }, role.description),
       role.highlights?.length
-        ? h("ul", { className: "px-highlights" }, role.highlights.map(text => h("li", { key: text }, text)))
+        ? highlights(role.highlights)
         : null,
+      role.details?.map(group =>
+        h("div", { className: "px-detail", key: group.title },
+          h("h4", null, group.title),
+          highlights(group.items)
+        )
+      ),
       role.video
         ? h("a", { className: "px-video", href: role.video, target: "_blank", rel: "noopener noreferrer" }, "Watch the robotics project on YouTube ↗")
         : null

@@ -24,12 +24,29 @@ window.portfolioContent = {
       duration: "Present",
       location: "Oregon, United States",
       description: "Work through Kforce on the Digital Front End (DFE) team for HP PageWide Press. Develop, maintain, and support the software that processes print jobs and coordinates workflows for high-speed industrial inkjet presses.",
-      highlights: [
-        "Investigate and resolve customer-reported issues across multiple PageWide Press products, including defects in print job submission, workflow orchestration, and press behavior.",
-        "Develop and enhance backend services and microservices with Groovy, Grails, Java, and Kotlin.",
-        "Diagnose issues across application, service, and infrastructure tiers by tracing logs, inspecting MariaDB records, and investigating Linux environments and virtual machines.",
-        "Use Docker, Kubernetes, Jenkins, and CI/CD pipelines to support integration testing, deployments, and production reliability.",
-        "Collaborate with software, firmware, and product engineering teams in two-week Scrum sprints to deliver fixes, enhancements, and production releases.",
+      details: [
+        {
+          "title": "Digital Front End development",
+          "items": [
+            "Maintain the DFE backend that accepts print jobs and coordinates their processing for high-speed industrial inkjet presses.",
+            "Develop and enhance services and microservices using Groovy, Grails, Java, and Kotlin. Work across application and service tiers when a change affects more than one part of the print workflow."
+          ]
+        },
+        {
+          "title": "Customer issue investigation",
+          "items": [
+            "Troubleshoot reports from customers using different HP PageWide Press products. Investigate failures in job submission, workflow orchestration, and how jobs behave on the press.",
+            "Use application logs and MariaDB records to trace where a workflow breaks. Inspect Linux environments, virtual machines, and deployed services when the evidence points beyond the application layer.",
+            "Work with software, firmware, and product engineering teams when an issue involves more than one tier or crosses the boundary between the DFE and the press."
+          ]
+        },
+        {
+          "title": "Testing, deployment, and releases",
+          "items": [
+            "Use Docker, Kubernetes, Jenkins, and CI/CD pipelines to support integration testing and deploy containerized services.",
+            "Deliver customer fixes and backend enhancements in two-week Scrum sprints and collaborate with partner teams on production releases."
+          ]
+        }
       ],
       color: "#0879bf",
     },
@@ -41,13 +58,30 @@ window.portfolioContent = {
       duration: "September 2025 – March 2026",
       location: "Dallas, Texas, United States",
       description: "Worked through Kforce on The Home Depot’s Customer Order Management platform, where distributed services handle millions of shipment and fulfillment events daily.",
-      highlights: [
-        "Built Java and Spring Boot microservices to consume, validate, transform, and publish shipment and return events across fulfillment systems.",
-        "Led the migration of high-volume event processing from Kafka to Google Cloud Pub/Sub. Used Terraform to provision topics, subscriptions, dead-letter resources, and IAM roles.",
-        "Designed idempotent processing, validation guards, and retry and dead-letter routing so duplicate messages and failures could be handled safely.",
-        "Refactored event handlers into separate validation, XML transformation, and publishing steps. Built reusable mappings for supplier advance shipment notices.",
-        "Extended return workflows for automatic refund eligibility, reward-card refunds, and job-site pickups. Validated migrated pipelines for shipment, return, and supplier events end to end.",
-        "Used structured logs, metrics, distributed tracing, and BigQuery to investigate downstream failures. Worked with SRE and platform teams on CI/CD, production releases, and operational runbooks.",
+      details: [
+        {
+          "title": "Shipment and return processing",
+          "items": [
+            "Built Java and Spring Boot services that consume, validate, transform, and publish shipment and return events across distributed fulfillment systems.",
+            "Separated validation, XML transformation, and publishing so each step could be maintained and tested independently. Built reusable XML-to-domain mappings for supplier advance shipment notices.",
+            "Extended return workflows for automatic refund eligibility, reward-card refund routing, SORIS returns, and job-site pickups."
+          ]
+        },
+        {
+          "title": "Kafka-to-Pub/Sub migration",
+          "items": [
+            "Led the migration of high-volume event processing from Apache Kafka to Google Cloud Pub/Sub. Used Terraform to provision topics, subscriptions, dead-letter resources, and IAM roles.",
+            "Added idempotent handling for duplicate messages, validation guards, and separate paths for retryable and non-retryable failures. Routed messages that couldn’t be processed to dead-letter queues for investigation.",
+            "Validated the migrated pipelines end to end across shipments, returns, and supplier feeds, including event propagation to downstream services."
+          ]
+        },
+        {
+          "title": "Production reliability",
+          "items": [
+            "Used structured logs, metrics, distributed tracing, and BigQuery to investigate downstream failures and check how dependent services consumed events.",
+            "Partnered with SRE and platform engineering through GitHub pull requests, CI/CD pipelines, and production releases. Maintained operational runbooks for support."
+          ]
+        }
       ],
       color: "#0879bf",
     },
@@ -59,13 +93,39 @@ window.portfolioContent = {
       duration: "May 2023 – July 2025",
       location: "Dallas, Texas, United States",
       description: "Contracted through Virtusa with the AWS Blu Age team, modernizing legacy IBM AS/400 and COBOL applications into Java Spring Boot applications while preserving the original business workflows.",
-      highlights: [
-        "Supported the migration of a COBOL codebase of more than 5.5 million lines to a Java Spring Boot monolithic application. Used Java 17+ to debug converted logic, maintain APIs, and improve runtime behavior.",
-        "Resolved more than 150 customer-reported issues and reduced the backlog by 30% in three months.",
-        "Tuned PostgreSQL queries and batch processing, improving throughput by 40%. Profiled the JVM with JProfiler and reduced latency by 20% and memory usage by 15%.",
-        "Worked with EC2, S3, Lambda, API Gateway, RDS, CloudWatch, SQS, and SNS for cloud deployments, messaging, and monitoring. Used CodeCommit, Jenkins, and CodePipeline for version control and CI/CD.",
-        "Used CodeSplit, a Python automation tool, to extract dependencies from large codebases and speed up debugging and environment setup. Built dashboards to track migration accuracy, application latency, and release readiness.",
-        "Implemented OAuth 2.0, JWT authentication, and role-based access controls for backend APIs. Participated in sprint planning, standups, and code reviews and coordinated weekly production deployments with cross-functional teams.",
+      details: [
+        {
+          "title": "COBOL-to-Java modernization",
+          "items": [
+            "Supported the modernization of an IBM AS/400 and COBOL codebase of more than 5.5 million lines into a Java Spring Boot monolith.",
+            "Used Java 17+ and Spring Boot to maintain APIs, debug converted business logic, and resolve regressions in enterprise workflows after migration.",
+            "Resolved more than 150 customer-reported issues, reducing the backlog by 30% in three months."
+          ]
+        },
+        {
+          "title": "Database and JVM performance",
+          "items": [
+            "Tuned PostgreSQL queries and batch processing with pgAdmin, improving throughput by 40%.",
+            "Profiled JVM memory and runtime behavior with JProfiler, reducing latency by 20% and memory usage by 15%.",
+            "Built data analysis pipelines and dashboards to track migration accuracy, application latency, and readiness for release."
+          ]
+        },
+        {
+          "title": "AWS integration and developer tooling",
+          "items": [
+            "Worked with EC2, S3, RDS, Lambda, API Gateway, CloudWatch, SQS, and SNS to deploy, monitor, and support the modernized application and its integrations.",
+            "Maintained source control in AWS CodeCommit and used Jenkins and AWS CodePipeline to support repeatable CI/CD workflows.",
+            "Used CodeSplit, a Python automation tool, to extract dependencies from large codebases and speed up debugging and developer environment setup.",
+            "Implemented OAuth 2.0, JWT authentication, and role-based access controls for backend APIs."
+          ]
+        },
+        {
+          "title": "Team delivery",
+          "items": [
+            "Participated in sprint planning, standups, and code reviews. Guided junior developers on Java backend development and AWS integration.",
+            "Coordinated with infrastructure and cross-functional teams on monitoring, production issue investigation, and weekly deployments."
+          ]
+        }
       ],
       color: "#0879bf",
     },
@@ -77,10 +137,29 @@ window.portfolioContent = {
       duration: "April 2019 – January 2020",
       location: "Mumbai, India",
       description: "Built image-captioning workflows for accessible educational content using AWS SageMaker, TensorFlow, and Keras.",
-      highlights: [
-        "Automated data preparation and model training, reducing manual effort by 90%.",
-        "Optimized distributed training workflows for 30% faster training and 25% lower latency.",
-        "Fine-tuned convolutional neural networks and applied transfer learning with ResNet and Inception, accelerating model convergence by 40% with limited labeled data.",
+      details: [
+        {
+          "title": "Accessibility and dataset preparation",
+          "items": [
+            "Worked on automated alt text for educational images so people who use screen readers could understand the image content.",
+            "Prepared and cleaned captioning data using Flickr8k, Flickr30k, MS COCO, and Conceptual Captions. Created synthetic image-caption data to evaluate the feasibility of automated alt text.",
+            "Automated data preparation and model training with Python, reducing manual effort by 90%."
+          ]
+        },
+        {
+          "title": "Model training and evaluation",
+          "items": [
+            "Built and trained image-captioning models with TensorFlow and Keras, including training jobs in AWS SageMaker script mode.",
+            "Fine-tuned convolutional networks and applied transfer learning with ResNet and Inception. Model convergence was 40% faster with limited labeled data.",
+            "Optimized distributed training workflows for 30% faster training and 25% lower latency."
+          ]
+        },
+        {
+          "title": "Natural language generation",
+          "items": [
+            "Prepared SQuAD data and GloVe word vectors for a separate natural question generation project."
+          ]
+        }
       ],
       color: "#0879bf",
     },
