@@ -1,21 +1,29 @@
-.experience-card .experience-card-description,
-.experience-card .experience-card-highlights {
-  line-height: 1.55;
-  text-align: left;
-}
-
-.experience-card-highlights {
-  margin: 0 20px 18px 10px;
-  padding-inline-start: 1.4em;
-  font-family: "Google Sans Regular", system-ui, sans-serif;
-}
-
-.experience-card-highlights li + li {
-  margin-top: 8px;
-}
-
+.px-intro { padding: clamp(38px, 6vw, 78px) 0 30px; }
+.px-intro h1, .px-section h2 { margin: 0; font: 400 clamp(3.2rem, 7vw, 6rem)/1 Georgia, serif; letter-spacing: -.055em; }
+.px-subtitle { margin: 16px 0 10px; font-size: clamp(1.18rem, 2.5vw, 1.7rem); }
+.px-summary { max-width: 69ch; margin: 0; color: var(--ph-muted); line-height: 1.65; }
+.px-jumps { display: flex; flex-wrap: wrap; gap: 8px 14px; padding-bottom: 30px; }
+.px-jumps button { cursor: pointer; border: 1px solid var(--ph-line); border-radius: 5px; padding: 9px 13px; background: #fff; color: var(--ph-accent); font: inherit; }
+.px-jumps button:hover { border-color: var(--ph-accent); }
+.px-jumps button:focus-visible { outline: 3px solid var(--ph-accent); outline-offset: 3px; }
+.px-section { padding: 28px 0 40px; border-top: 1px solid var(--ph-line); }
+.px-section h2 { margin-bottom: 20px; font-size: clamp(1.9rem, 4vw, 3rem); scroll-margin-top: 20px; }
+.px-cards { display: grid; gap: 14px; }
+.px-card { padding: clamp(17px, 3vw, 30px); background: #fff; border: 1px solid var(--ph-line); border-radius: 7px; }
+.px-work-history .px-card:first-child { border-inline-start: 4px solid var(--ph-accent); }
+.px-card-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+.px-card h3 { margin: 0 0 5px; line-height: 1.25; font-size: clamp(1.2rem, 3vw, 1.55rem); }
+.px-card a { color: var(--ph-accent); text-underline-offset: 4px; }
+.px-dates { text-align: right; color: var(--ph-muted); font-size: .9rem; line-height: 1.45; }
+.px-dates p { margin: 0; }
+.px-description, .px-highlights { margin: 14px 0 0; line-height: 1.58; }
+.px-highlights { padding-inline-start: 1.25em; color: var(--ph-muted); }
+.px-highlights li + li { margin-top: 7px; }
+.px-internship-history .px-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.px-internship-history .px-dates { text-align: left; }
+.px-extracurriculars .px-card { background: #eef2fc; }
+.px-video { display: inline-block; margin-top: 14px; }
 @media (max-width: 700px) {
-  .experience-card-highlights {
-    margin-inline: 14px;
-  }
+  .px-internship-history .px-cards { grid-template-columns: 1fr; }
+  .px-dates { width: 100%; text-align: left; }
 }

@@ -1,5 +1,5 @@
-body:has(.portfolio-home) { background: #f8f7f3; }
-.portfolio-home {
+body:has(.portfolio-home, .portfolio-interior) { background: #f8f7f3; }
+.portfolio-home, .portfolio-interior {
   --ph-ink: #171e2c;
   --ph-muted: #495364;
   --ph-line: #d8dbe0;
@@ -9,9 +9,9 @@ body:has(.portfolio-home) { background: #f8f7f3; }
   background: #f8f7f3;
   font-family: "Google Sans Regular", system-ui, sans-serif;
 }
-.portfolio-home * { box-sizing: border-box; }
-.portfolio-home a { color: inherit; }
-.portfolio-home a:focus-visible { outline: 3px solid var(--ph-accent); outline-offset: 4px; }
+:is(.portfolio-home, .portfolio-interior) * { box-sizing: border-box; }
+:is(.portfolio-home, .portfolio-interior) a { color: inherit; }
+:is(.portfolio-home, .portfolio-interior) a:focus-visible { outline: 3px solid var(--ph-accent); outline-offset: 4px; }
 .ph-shell { max-width: 1240px; padding: 0 clamp(24px, 5vw, 72px); margin: 0 auto; }
 .ph-header { min-height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--ph-line); }
 .ph-wordmark { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--ph-ink); border-radius: 50%; font-weight: 700; letter-spacing: -.04em; text-decoration: none; flex-shrink: 0; }

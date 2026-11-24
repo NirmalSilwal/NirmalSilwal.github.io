@@ -1,7 +1,7 @@
 // Rendered by the portfolio’s existing React router.
-window.renderPortfolioHome = function renderPortfolioHome(h) {
-  const profile = window.portfolioContent;
-  const projects = window.portfolioGitHub.projects.data;
+window.addEventListener("hashchange", () => window.scrollTo(0, 0));
+
+window.renderPortfolioHeader = function renderPortfolioHeader(h, route) {
   const links = [
     ["Home", "#/home"],
     ["Experience", "#/experience"],
@@ -10,13 +10,26 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
     ["Open Source", "#/opensource"],
     ["Contact", "#/contact"],
   ];
+  return h("header", { className: "ph-header" },
+    h("a", { className: "ph-wordmark", href: "#/home", "aria-label": "Nirmal Silwal, home" }, "NS"),
+    h("nav", { className: "ph-nav", "aria-label": "Portfolio" },
+      links.map(([label, href]) =>
+        h("a", { key: href, href, "aria-current": href === "#/" + route ? "page" : undefined }, label)
+      )
+    )
+  );
+};
+
+window.renderPortfolioHome = function renderPortfolioHome(h) {
+  const profile = window.portfolioContent;
+  const projects = window.portfolioGitHub.projects.data;
   const homepageProjects = [
     { name: "dockerizing-spring-boot-app", title: "Dockerizing Spring Boot", topic: "Software development" },
     { name: "system-design-resources", title: "System Design Resources", topic: "System design" },
     { name: "Data-Structure-and-Algorithm-Java-interview-kit", title: "Java Interview Kit", topic: "Problem solving" },
   ];
 
-  const roleLabels = ["HP PageWide Press", "The Home Depot via Kforce", "AWS via Virtusa"];
+  const roleLabels = ["HP PageWide Press via Kforce", "The Home Depot via Kforce", "AWS via Virtusa"];
   const roleHighlights = [
     "Digital Front End development and customer issue resolution across industrial presses.",
     "Spring Boot services for order fulfillment and a Kafka-to-Pub/Sub migration.",
@@ -29,18 +42,11 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
 
   return h("div", { className: "portfolio-home" },
     h("div", { className: "ph-shell" },
-      h("header", { className: "ph-header" },
-        h("a", { className: "ph-wordmark", href: "#/home", "aria-label": "Nirmal Silwal, home" }, "NS"),
-        h("nav", { className: "ph-nav", "aria-label": "Portfolio" },
-          links.map(([label, href]) =>
-            h("a", { key: href, href, "aria-current": href === "#/home" ? "page" : undefined }, label)
-          )
-        )
-      ),
+      window.renderPortfolioHeader(h, "home"),
       h("main", null,
         h("section", { className: "ph-hero", "aria-labelledby": "ph-title" },
           h("div", { className: "ph-intro" },
-            h("p", { className: "ph-role" }, "Senior Software Developer at HP"),
+            h("p", { className: "ph-role" }, "Senior Software Developer at HP via Kforce"),
             h("h1", { id: "ph-title" }, "Nirmal Silwal"),
             h("p", { className: "ph-summary" }, profile.introduction),
             h("div", { className: "ph-actions" },

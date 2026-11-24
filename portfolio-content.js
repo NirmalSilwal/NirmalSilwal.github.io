@@ -2,14 +2,14 @@
 window.portfolioContent = {
   seo: {
     title: "Nirmal Silwal | Backend Software Engineer",
-    description: "Nirmal Silwal is a Senior Software Developer at HP in Oregon, where he works on backend software for HP PageWide Press.",
+    description: "Nirmal Silwal is a Senior Software Developer working through Kforce on HP PageWide Press in Oregon.",
     og: {
       title: "Nirmal Silwal | Backend Software Engineer",
       type: "website",
       url: "https://nirmalsilwal.github.io/",
     },
   },
-  introduction: "I build backend software on the Digital Front End team for HP PageWide Press in Oregon. My background spans Java and Spring Boot development, system design, and troubleshooting distributed systems.",
+  introduction: "I work through Kforce on the Digital Front End team for HP PageWide Press in Oregon. My background spans backend development, system design, and troubleshooting distributed systems.",
   social: {
     github: "https://github.com/NirmalSilwal",
     linkedin: "https://www.linkedin.com/in/nirmal-silwal/",
@@ -18,12 +18,12 @@ window.portfolioContent = {
   workHistory: [
     {
       title: "Senior Software Developer",
-      company: "HP · PageWide Press",
+      company: "Kforce · Client: HP PageWide Press",
       company_url: "https://www.hp.com/us-en/commercial-industrial-printing/pagewide-web-press.html",
       logo_path: "experience.svg",
       duration: "Present",
       location: "Oregon, United States",
-      description: "Develop, maintain, and support Digital Front End (DFE) software for HP PageWide Press. The DFE processes print jobs and coordinates workflows for high-speed industrial inkjet presses.",
+      description: "Work through Kforce on the Digital Front End (DFE) team for HP PageWide Press. Develop, maintain, and support the software that processes print jobs and coordinates workflows for high-speed industrial inkjet presses.",
       highlights: [
         "Investigate and resolve customer-reported issues across multiple PageWide Press products, including defects in print job submission, workflow orchestration, and press behavior.",
         "Develop and enhance backend services and microservices with Groovy, Grails, Java, and Kotlin.",
@@ -124,6 +124,7 @@ window.portfolioContent = {
       duration: "2014 – 2018",
       location: "Meerut, Uttar Pradesh, India",
       description: "My three-person team won the Live Project competition at Confluence with an Arduino line-following robot. I placed second in Codejam, a C debugging and program-output contest. Our team also won the Best Out of Waste challenge with a project made from reused campus materials.",
+      video: "https://youtu.be/joTxrcp3HU0",
       color: "#4285F4",
     },
   ],
@@ -148,7 +149,7 @@ window.portfolioContent = {
     softwareSkills: [],
   },
   experienceSubtitle: "Backend Engineering and Cloud Modernization",
-  experienceSummary: "I’m a Senior Software Developer at HP in Oregon, building backend software for PageWide Press. My previous work includes Spring Boot services for The Home Depot’s order-fulfillment platform and COBOL-to-Java modernization with the AWS Blu Age team.",
+  experienceSummary: "I’m a Senior Software Developer working through Kforce on HP’s Digital Front End team in Oregon. Before HP, I built Spring Boot services for The Home Depot through Kforce and worked on COBOL-to-Java modernization with AWS Blu Age through Virtusa.",
   projectsSummary: "Explore backend development with Java and Spring, system design resources, and data structure and algorithm practice. You’ll also find my graduate coursework and earlier deep learning projects.",
   contact: {
     description: "Connect with me on LinkedIn or explore my open-source work on GitHub.",
