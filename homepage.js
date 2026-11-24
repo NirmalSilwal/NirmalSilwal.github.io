@@ -46,12 +46,19 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
       h("main", null,
         h("section", { className: "ph-hero", "aria-labelledby": "ph-title" },
           h("div", { className: "ph-intro" },
-            h("p", { className: "ph-role" }, "Senior Software Developer at HP via Kforce"),
-            h("h1", { id: "ph-title" }, "Nirmal Silwal"),
-            h("p", { className: "ph-summary" }, profile.introduction),
+            h("p", { className: "ph-role" }, "Nirmal Silwal · Senior Backend Software Developer"),
+            h("h1", { id: "ph-title" }, "I build and troubleshoot backend systems."),
+            h("p", { className: "ph-summary" }, "I work through Kforce on HP PageWide Press in Oregon. My experience includes Java and Spring Boot services, event-driven fulfillment, and production troubleshooting."),
             h("div", { className: "ph-actions" },
               h("a", { className: "ph-button", href: "#/experience" }, "View experience", h("span", { "aria-hidden": true }, "↗")),
-              h("a", { className: "ph-secondary", href: "#/projects" }, "Explore projects")
+              h("a", { className: "ph-secondary", href: profile.social.email }, "Email me")
+            )
+          ),
+          h("aside", { className: "ph-proof", "aria-labelledby": "ph-proof-title" },
+            h("h2", { id: "ph-proof-title" }, "AWS Blu Age via Virtusa"),
+            h("dl", null,
+              h("div", null, h("dt", null, "30%"), h("dd", null, "Reduction in customer issue backlog in three months")),
+              h("div", null, h("dt", null, "40%"), h("dd", null, "Higher batch throughput after PostgreSQL tuning"))
             )
           )
         ),
@@ -73,15 +80,29 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
             )
           )
         ),
-        h("section", { className: "ph-section ph-case", "aria-labelledby": "ph-case-title" },
-          h("div", null,
-            h("p", { className: "ph-topic" }, "System design in practice"),
-            h("h2", { id: "ph-case-title" }, "Reliable order events")
+        h("section", { className: "ph-section", "aria-labelledby": "ph-case-title" },
+          h("div", { className: "ph-section-heading" },
+            h("h2", { id: "ph-case-title" }, "Engineering case studies")
           ),
-          h("div", { className: "ph-case-detail" },
-            h("p", null, "At The Home Depot through Kforce, I built Spring Boot services for shipment and return events and migrated event processing from Kafka to Google Cloud Pub/Sub."),
-            h("p", null, "Duplicate events needed to be safe to process, transient failures needed a retry, and messages that couldn’t be processed needed a place for investigation. I implemented idempotent handling, retries, and dead-letter routing."),
-            h("a", { href: "#/experience" }, "More about this role ↗")
+          h("article", { className: "ph-case" },
+            h("div", null,
+              h("p", { className: "ph-topic" }, "The Home Depot via Kforce"),
+              h("h3", null, "Reliable order events")
+            ),
+            h("div", { className: "ph-case-detail" },
+              h("p", null, "Shipment and return events needed to keep flowing during a migration from Kafka to Google Cloud Pub/Sub. I led the migration and built Spring Boot services that validate, transform, and publish those events."),
+              h("p", null, "I made duplicate events safe to process and separated retryable failures from messages that needed investigation. I validated the migrated pipelines end to end, from supplier feeds to downstream fulfillment services.")
+            )
+          ),
+          h("article", { className: "ph-case" },
+            h("div", null,
+              h("p", { className: "ph-topic" }, "AWS Blu Age via Virtusa"),
+              h("h3", null, "Stabilizing a COBOL-to-Java migration")
+            ),
+            h("div", { className: "ph-case-detail" },
+              h("p", null, "I helped migrate a COBOL codebase of more than 5.5 million lines into a Spring Boot monolith and debugged converted business logic after migration."),
+              h("p", null, "I resolved more than 150 customer issues and used PostgreSQL query tuning and JVM profiling to improve throughput and reduce latency and memory usage.")
+            )
           )
         ),
         h("section", { className: "ph-section", "aria-labelledby": "ph-projects" },
