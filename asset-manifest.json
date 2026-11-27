@@ -65,7 +65,8 @@
     "open-source.css": "/open-source.css",
     "resume.html": "/resume.html",
     "site-motion.css": "/site-motion.css",
-    "site-motion.js": "/site-motion.js"
+    "site-motion.js": "/site-motion.js",
+    "home-backdrop.js": "/home-backdrop.js"
   },
   "entrypoints": [
     "static/js/runtime-main.fe335e26.js",
@@ -74,6 +75,7 @@
     "portfolio-content.js",
     "github-content.js",
     "homepage.css",
+    "home-backdrop.js",
     "homepage.js",
     "experience.css",
     "portfolio-pages.css",

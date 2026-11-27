@@ -44,7 +44,8 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
     h("div", { className: "ph-shell" },
       window.renderPortfolioHeader(h, "home"),
       h("main", null,
-        h("section", { className: "ph-hero", "aria-labelledby": "ph-title" },
+        h("section", { className: "ph-hero", "aria-labelledby": "ph-title", ref: window.mountPortfolioHomeBackdrop },
+          h("canvas", { className: "ph-signal-art", "aria-hidden": true }),
           h("div", { className: "ph-intro" },
             h("p", { className: "ph-role" }, "Nirmal Silwal · Senior Backend Software Developer"),
             h("h1", { id: "ph-title" }, "I build and operate backend services."),
@@ -61,6 +62,10 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
               h("div", null, h("dt", null, "30%"), h("dd", null, "Reduction in customer issue backlog in three months")),
               h("div", null, h("dt", null, "40%"), h("dd", null, "Higher batch throughput after PostgreSQL tuning"))
             )
+          ),
+          h("button", { className: "ph-motion-toggle", type: "button", hidden: true },
+            h("span", { className: "ph-motion-icon", "aria-hidden": true }),
+            h("span", null, "Pause background")
           )
         ),
         h("section", { className: "ph-section", "aria-labelledby": "ph-case-title" },
