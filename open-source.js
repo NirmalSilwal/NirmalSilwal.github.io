@@ -36,8 +36,12 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
   function contribution(item) {
     const repo = item.baseRepository || item.repository;
     const type = item.baseRepository ? "Pull request" : "Issue";
-    const status = item.state || (item.closed ? "CLOSED" : "OPEN");
+    const status = (item.state || (item.closed ? "CLOSED" : "OPEN")).toLowerCase();
     return { repo: repo.owner.login + "/" + repo.name, type, status };
+  }
+
+  function statusBadge(status, label) {
+    return h("span", { className: "os-status", "data-status": status }, label);
   }
 
   function counts(title, data, statuses) {
@@ -73,7 +77,10 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
         const metadata = contribution(item);
         return h("li", { key: item.id },
           h("div", null, external(item.url, item.title, "pd-link"), h("p", null, metadata.repo + " #" + item.number)),
-          h("span", { className: "os-archive-meta" }, metadata.status.toLowerCase(), " · ", dateFormatter.format(new Date(item.createdAt)))
+          h("span", { className: "os-archive-meta" },
+            statusBadge(metadata.status, metadata.status),
+            h("time", { dateTime: item.createdAt }, dateFormatter.format(new Date(item.createdAt)))
+          )
         );
       }))
     );
@@ -103,8 +110,8 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
       ),
       h("div", { className: "pd-grid os-featured-grid" }, selected.map(item => {
         const metadata = contribution(allItems.get(item.url));
-        return h("article", { className: "pd-tile", key: item.url },
-          h("p", { className: "pd-tile-label" }, metadata.type + " · " + metadata.status.toLowerCase()),
+        return h("article", { className: "pd-tile os-contribution", key: item.url, "data-status": metadata.status },
+          statusBadge(metadata.status, metadata.type + " · " + metadata.status),
           h("h3", null, item.title),
           h("p", null, item.description),
           h("p", { className: "os-repo" }, metadata.repo),
@@ -113,13 +120,15 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
       }))
     ),
     h("section", { className: "pd-section", "aria-labelledby": "os-activity" },
-      h("div", { className: "pd-section-heading" },
-        h("h2", { id: "os-activity", tabIndex: -1 }, "Contribution activity"),
-        h("p", { className: "os-as-of" }, "Snapshot from ", h("time", { dateTime: github.updatedAt }, dateFormatter.format(new Date(github.updatedAt))))
-      ),
-      h("div", { className: "pd-grid os-activity-grid" },
-        counts("pull requests", pullRequests, [["open", "Open"], ["merged", "Merged"], ["closed", "Closed without merge"]]),
-        counts("issues", issues, [["open", "Open"], ["closed", "Closed"]])
+      h("div", { className: "os-dashboard" },
+        h("div", { className: "pd-section-heading" },
+          h("h2", { id: "os-activity", tabIndex: -1 }, "Contribution activity"),
+          h("p", { className: "os-as-of" }, "Snapshot from ", h("time", { dateTime: github.updatedAt }, dateFormatter.format(new Date(github.updatedAt))))
+        ),
+        h("div", { className: "pd-grid os-activity-grid" },
+          counts("pull requests", pullRequests, [["open", "Open"], ["merged", "Merged"], ["closed", "Closed without merge"]]),
+          counts("issues", issues, [["open", "Open"], ["closed", "Closed"]])
+        )
       ),
       activityList("Browse pull requests", pullRequests.data),
       activityList("Browse issues", issues.data)

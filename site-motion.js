@@ -6,7 +6,7 @@
   const selector = [
     ".ph-hero", ".ph-proof", ".ph-case", ".ph-roles > li", ".ph-project", ".ph-community",
     ".pd-hero", ".pd-hero-aside", ".pd-tile", ".px-card", ".pd-certificates",
-    ".pd-contact-panel", ".pd-contact-photo", ".os-archive", ".os-organizations",
+    ".pd-contact-panel", ".pd-contact-photo", ".os-dashboard", ".os-archive", ".os-organizations",
   ].join(", ");
   const observed = new WeakSet();
   const observer = new IntersectionObserver(entries => {
