@@ -136,7 +136,30 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
     h("section", { className: "pd-section", "aria-labelledby": "os-organizations" },
       h("h2", { id: "os-organizations" }, "Public GitHub organizations"),
       h("ul", { className: "os-organizations" }, github.organizations.data.map(org =>
-        h("li", { key: org.login }, external("https://github.com/" + org.login, org.login, "pd-link"))
+        h("li", { key: org.login },
+          h("a", {
+            className: "os-org-card",
+            href: "https://github.com/" + org.login,
+            target: "_blank",
+            rel: "noopener noreferrer",
+          },
+            h("span", { className: "os-org-logo", "aria-hidden": true },
+              h("span", null, org.login.slice(0, 2).toUpperCase()),
+              org.avatarUrl ? h("img", {
+                src: org.avatarUrl,
+                alt: "",
+                width: 46,
+                height: 46,
+                loading: "lazy",
+                decoding: "async",
+                referrerPolicy: "no-referrer",
+                onError: event => { event.currentTarget.hidden = true; },
+              }) : null
+            ),
+            h("span", { className: "os-org-name" }, org.login),
+            h("span", { className: "os-org-arrow", "aria-hidden": true }, "↗")
+          )
+        )
       ))
     )
   );
