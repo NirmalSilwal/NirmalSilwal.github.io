@@ -1,0 +1,53 @@
+:is(.ph-case-more, .os-archive) summary {
+  position: relative;
+  padding-inline-end: 35px;
+  list-style: none;
+}
+:is(.ph-case-more, .os-archive) summary::-webkit-details-marker { display: none; }
+:is(.ph-case-more, .os-archive) summary::after {
+  position: absolute;
+  inset-inline-end: 7px;
+  top: calc(50% - 5px);
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-inline-end: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.os-archive summary::after { inset-inline-end: 18px; }
+:is(.ph-case-more, .os-archive)[open] summary::after { transform: rotate(225deg); }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes portfolio-reveal {
+    from { opacity: .25; transform: translateY(13px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .motion-entered { animation: portfolio-reveal 460ms cubic-bezier(.22,.72,.23,1) backwards; }
+  :is(.ph-proof, .pd-hero-aside, .pd-contact-photo).motion-entered { animation-delay: 95ms; }
+  :is(.ph-project, .ph-roles > li, .pd-grid > .pd-tile):nth-child(2n).motion-entered { animation-delay: 60ms; }
+  :is(.ph-project, .pd-grid > .pd-tile):nth-child(3n).motion-entered { animation-delay: 100ms; }
+  :is(.ph-case-more, .os-archive) summary::after { transition: transform 170ms ease; }
+  .ph-case-more[open] .ph-decisions, .os-archive[open] ul { animation: portfolio-reveal 240ms ease-out backwards; }
+
+  :is(.ph-project, .pd-project-tile, .os-featured-grid .pd-tile) {
+    transition: translate 190ms ease, border-color 190ms ease, box-shadow 190ms ease;
+  }
+  :is(.ph-project, .pd-project-tile, .os-featured-grid .pd-tile):focus-within {
+    translate: 0 -3px;
+    border-color: #8daed6;
+    box-shadow: 0 10px 20px #162c4c12;
+  }
+  @media (hover: hover) {
+    :is(.ph-project, .pd-project-tile, .os-featured-grid .pd-tile):hover {
+      translate: 0 -3px;
+      border-color: #8daed6;
+      box-shadow: 0 10px 20px #162c4c12;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:has(.portfolio-home, .portfolio-interior) { transition: none !important; }
+}

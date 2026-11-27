@@ -41,14 +41,28 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
   }
 
   function counts(title, data, statuses) {
+    let cumulative = 0;
+    const segments = statuses.map(([key]) => {
+      const start = cumulative;
+      cumulative += data[key];
+      const total = data.totalCount || 1;
+      return "var(--os-" + key + ") " + (100 * start / total) + "% " + (100 * cumulative / total) + "%";
+    });
     return h("section", { className: "pd-tile os-counts", key: title },
       h("h3", null, data.totalCount + " " + title),
-      h("div", { className: "os-meter", "aria-hidden": true },
-        statuses.map(([key]) => h("span", { key, className: "os-" + key, style: { flexGrow: data[key] } }))
-      ),
-      h("dl", { className: "os-count-list" }, statuses.map(([key, label]) =>
-        h("div", { key }, h("dt", null, label), h("dd", null, data[key]))
-      ))
+      h("div", { className: "os-count-body" },
+        h("div", {
+          className: "os-ring",
+          "aria-hidden": true,
+          style: data.totalCount ? { "--os-segments": "conic-gradient(" + segments.join(", ") + ")" } : undefined,
+        }, h("span", null, data.totalCount)),
+        h("dl", { className: "os-count-list" }, statuses.map(([key, label]) =>
+          h("div", { key },
+            h("dt", null, h("span", { className: "os-swatch os-" + key, "aria-hidden": true }), label),
+            h("dd", null, data[key])
+          )
+        ))
+      )
     );
   }
 
@@ -79,7 +93,14 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
       )
     ),
     h("section", { className: "pd-section", "aria-labelledby": "os-featured" },
-      h("h2", { id: "os-featured" }, "Selected contributions"),
+      h("div", { className: "pd-section-heading" },
+        h("h2", { id: "os-featured" }, "Selected contributions"),
+        h("button", { type: "button", className: "os-jump", onClick: () => {
+          const activity = document.getElementById("os-activity");
+          activity.focus({ preventScroll: true });
+          activity.scrollIntoView({ block: "start" });
+        } }, "See contribution charts ↓")
+      ),
       h("div", { className: "pd-grid os-featured-grid" }, selected.map(item => {
         const metadata = contribution(allItems.get(item.url));
         return h("article", { className: "pd-tile", key: item.url },
@@ -93,7 +114,7 @@ window.renderPortfolioOpenSource = function renderPortfolioOpenSource(h) {
     ),
     h("section", { className: "pd-section", "aria-labelledby": "os-activity" },
       h("div", { className: "pd-section-heading" },
-        h("h2", { id: "os-activity" }, "Contribution activity"),
+        h("h2", { id: "os-activity", tabIndex: -1 }, "Contribution activity"),
         h("p", { className: "os-as-of" }, "Snapshot from ", h("time", { dateTime: github.updatedAt }, dateFormatter.format(new Date(github.updatedAt))))
       ),
       h("div", { className: "pd-grid os-activity-grid" },

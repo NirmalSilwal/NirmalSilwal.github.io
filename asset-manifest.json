@@ -63,7 +63,9 @@
     "detail-pages.js": "/detail-pages.js",
     "open-source.js": "/open-source.js",
     "open-source.css": "/open-source.css",
-    "resume.html": "/resume.html"
+    "resume.html": "/resume.html",
+    "site-motion.css": "/site-motion.css",
+    "site-motion.js": "/site-motion.js"
   },
   "entrypoints": [
     "static/js/runtime-main.fe335e26.js",
@@ -79,6 +81,8 @@
     "experience.js",
     "open-source.css",
     "open-source.js",
-    "static/js/main.43001f66.chunk.js"
+    "static/js/main.43001f66.chunk.js",
+    "site-motion.css",
+    "site-motion.js"
   ]
 }
