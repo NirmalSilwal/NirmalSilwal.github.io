@@ -90,11 +90,14 @@ const projectData = Array.from(projects, ([name, description]) => {
     createdAt: repo.created_at,
     url: repo.html_url,
     description,
+    stars: repo.stargazers_count,
     languages: languageIcons[repo.language] ? [{ name: repo.language, iconifyClass: languageIcons[repo.language] }] : [],
   };
 });
 const snapshot = {
-  updatedAt: new Date().toISOString().slice(0, 10),
+  updatedAt: new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit",
+  }).format(new Date()),
   profileUrl,
   pullRequests: summarize(prs, ["open", "merged", "closed"], item => item.state.toLowerCase()),
   issues: summarize(issuesData, ["open", "closed"], item => item.closed ? "closed" : "open"),

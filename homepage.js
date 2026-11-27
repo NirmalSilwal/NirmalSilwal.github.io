@@ -47,10 +47,11 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
         h("section", { className: "ph-hero", "aria-labelledby": "ph-title" },
           h("div", { className: "ph-intro" },
             h("p", { className: "ph-role" }, "Nirmal Silwal · Senior Backend Software Developer"),
-            h("h1", { id: "ph-title" }, "I build and troubleshoot backend systems."),
-            h("p", { className: "ph-summary" }, "I work through Kforce on HP PageWide Press in Oregon. My experience includes Java and Spring Boot services, event-driven fulfillment, and production troubleshooting."),
+            h("h1", { id: "ph-title" }, "I build and operate backend services."),
+            h("p", { className: "ph-summary" }, "I work through Kforce on HP PageWide Press in Oregon. My work includes Java and Spring Boot services, an event-processing migration I led for The Home Depot, and COBOL-to-Java modernization with AWS Blu Age."),
             h("div", { className: "ph-actions" },
               h("a", { className: "ph-button", href: "#/experience" }, "View experience", h("span", { "aria-hidden": true }, "↗")),
+              h("a", { className: "ph-secondary", href: "/resume.html" }, "Résumé"),
               h("a", { className: "ph-secondary", href: profile.social.email }, "Email me")
             )
           ),
@@ -59,6 +60,50 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
             h("dl", null,
               h("div", null, h("dt", null, "30%"), h("dd", null, "Reduction in customer issue backlog in three months")),
               h("div", null, h("dt", null, "40%"), h("dd", null, "Higher batch throughput after PostgreSQL tuning"))
+            )
+          )
+        ),
+        h("section", { className: "ph-section", "aria-labelledby": "ph-case-title" },
+          h("div", { className: "ph-section-heading" },
+            h("h2", { id: "ph-case-title" }, "Engineering case studies")
+          ),
+          h("article", { className: "ph-case" },
+            h("div", null,
+              h("p", { className: "ph-topic" }, "The Home Depot via Kforce"),
+              h("h3", null, "Reliable order events")
+            ),
+            h("div", { className: "ph-case-detail" },
+              h("p", null, "Shipment and return events needed to keep flowing during a migration from Kafka to Google Cloud Pub/Sub. I led the migration and built Spring Boot services that validate, transform, and publish those events."),
+              h("p", null, "I made duplicate events safe to process and separated retryable failures from messages that needed investigation. I validated the migrated pipelines end to end, from supplier feeds to downstream fulfillment services."),
+              h("details", { className: "ph-case-more" },
+                h("summary", null, "Event processing and failure handling"),
+                h("ol", { className: "ph-flow", "aria-label": "Simplified message processing flow" },
+                  ["Validate", "Transform", "Publish", "Deliver"].map(step => h("li", { key: step }, step))
+                ),
+                h("dl", { className: "ph-decisions" },
+                  h("div", null, h("dt", null, "Duplicates"), h("dd", null, "Idempotent handling lets a repeated event reach the service without repeating its effect.")),
+                  h("div", null, h("dt", null, "Temporary failures"), h("dd", null, "Retry messages when the failure can clear.")),
+                  h("div", null, h("dt", null, "Messages that need investigation"), h("dd", null, "Route them to a dead-letter queue so the main processing path can continue."))
+                )
+              )
+            )
+          ),
+          h("article", { className: "ph-case" },
+            h("div", null,
+              h("p", { className: "ph-topic" }, "AWS Blu Age via Virtusa"),
+              h("h3", null, "Stabilizing a COBOL-to-Java migration")
+            ),
+            h("div", { className: "ph-case-detail" },
+              h("p", null, "I helped migrate a COBOL codebase of more than 5.5 million lines into a Spring Boot monolith and debugged converted business logic after migration."),
+              h("p", null, "I resolved more than 150 customer issues and used PostgreSQL query tuning and JVM profiling to improve throughput and reduce latency and memory usage."),
+              h("details", { className: "ph-case-more" },
+                h("summary", null, "How I investigated performance"),
+                h("dl", { className: "ph-decisions" },
+                  h("div", null, h("dt", null, "Database"), h("dd", null, "Tuned PostgreSQL queries and batch processing, improving throughput by 40%.")),
+                  h("div", null, h("dt", null, "Runtime"), h("dd", null, "Profiled the JVM with JProfiler, reducing latency by 20% and memory use by 15%.")),
+                  h("div", null, h("dt", null, "Release readiness"), h("dd", null, "Used dashboards to track migration accuracy, latency, and readiness for release."))
+                )
+              )
             )
           )
         ),
@@ -80,31 +125,6 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
             )
           )
         ),
-        h("section", { className: "ph-section", "aria-labelledby": "ph-case-title" },
-          h("div", { className: "ph-section-heading" },
-            h("h2", { id: "ph-case-title" }, "Engineering case studies")
-          ),
-          h("article", { className: "ph-case" },
-            h("div", null,
-              h("p", { className: "ph-topic" }, "The Home Depot via Kforce"),
-              h("h3", null, "Reliable order events")
-            ),
-            h("div", { className: "ph-case-detail" },
-              h("p", null, "Shipment and return events needed to keep flowing during a migration from Kafka to Google Cloud Pub/Sub. I led the migration and built Spring Boot services that validate, transform, and publish those events."),
-              h("p", null, "I made duplicate events safe to process and separated retryable failures from messages that needed investigation. I validated the migrated pipelines end to end, from supplier feeds to downstream fulfillment services.")
-            )
-          ),
-          h("article", { className: "ph-case" },
-            h("div", null,
-              h("p", { className: "ph-topic" }, "AWS Blu Age via Virtusa"),
-              h("h3", null, "Stabilizing a COBOL-to-Java migration")
-            ),
-            h("div", { className: "ph-case-detail" },
-              h("p", null, "I helped migrate a COBOL codebase of more than 5.5 million lines into a Spring Boot monolith and debugged converted business logic after migration."),
-              h("p", null, "I resolved more than 150 customer issues and used PostgreSQL query tuning and JVM profiling to improve throughput and reduce latency and memory usage.")
-            )
-          )
-        ),
         h("section", { className: "ph-section", "aria-labelledby": "ph-projects" },
           h("div", { className: "ph-section-heading" },
             h("h2", { id: "ph-projects" }, "Selected projects"),
@@ -116,10 +136,20 @@ window.renderPortfolioHome = function renderPortfolioHome(h) {
               return h("article", { className: "ph-project", key: name },
                 h("p", { className: "ph-topic" }, topic),
                 h("h3", null, externalLink(title, project.url)),
-                h("p", { className: "ph-project-summary" }, project.description)
+                h("p", { className: "ph-project-summary" }, project.description),
+                name === "system-design-resources" && project.stars > 0
+                  ? h("p", { className: "ph-repo-stat" }, new Intl.NumberFormat("en-US").format(project.stars), " GitHub stars")
+                  : null
               );
             })
           )
+        ),
+        h("section", { className: "ph-section ph-community", "aria-labelledby": "ph-community" },
+          h("div", null,
+            h("h2", { id: "ph-community" }, "Open-source contributions"),
+            h("p", null, "Read merged changes and bug reports to see how I work with other developers.")
+          ),
+          h("a", { className: "ph-community-link", href: "#/opensource" }, "Explore contributions ↗")
         )
       ),
       h("footer", { className: "ph-footer" },

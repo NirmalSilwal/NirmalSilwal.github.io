@@ -169,7 +169,8 @@ window.portfolioPages = (() => {
           h("p", { className: "pd-lead" }, "If you’re hiring for backend engineering or want to talk about system design and modernization, send me an email or a LinkedIn message."),
           h("div", { className: "pd-contact-actions" },
             h("a", { href: profile.social.email, className: "pd-primary" }, "Email Nirmal"),
-            external(h, profile.social.linkedin, "Connect on LinkedIn ↗", "pd-hero-link")
+            external(h, profile.social.linkedin, "Connect on LinkedIn ↗", "pd-hero-link"),
+            h("a", { href: "/resume.html", className: "pd-hero-link" }, "Résumé")
           ),
           h("a", { className: "pd-address", href: profile.social.email }, profile.social.email.slice("mailto:".length))
         ),

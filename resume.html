@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Résumé for Nirmal Silwal, Senior Software Developer based in Oregon.">
+  <title>Nirmal Silwal | Résumé</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; color: #182237; background: #eaf0f7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: #174887; text-underline-offset: 2px; overflow-wrap: anywhere; }
+    .toolbar, main { width: min(100% - 24px, 8.5in); margin-inline: auto; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 2px; }
+    .toolbar button { cursor: pointer; border: 1px solid #174887; border-radius: 5px; padding: 8px 12px; background: #174887; color: white; font: inherit; }
+    main { margin-bottom: 24px; padding: clamp(16px, 6vw, .55in); background: white; font-size: 10.5pt; line-height: 1.35; }
+    h1, h2, h3, p, ul { margin: 0; }
+    h1 { font-size: 25pt; line-height: 1.1; }
+    .role { margin-top: 3px; font-weight: 700; }
+    .contact { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 5px; }
+    .summary { margin-top: 9px; }
+    h2 { margin: 14px 0 6px; padding-bottom: 3px; border-bottom: 1px solid #9da9bd; font-size: 12pt; }
+    article + article { margin-top: 8px; }
+    .job-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1px 10px; }
+    h3 { font-size: 10.5pt; }
+    .client { color: #39445b; }
+    ul { padding-left: 1.2em; }
+    li + li { margin-top: 2px; }
+    .education + .education { margin-top: 3px; }
+    @page { size: Letter; margin: .45in; }
+    @media print {
+      :root { background: white; color: black; }
+      .toolbar { display: none; }
+      main { width: 100%; margin: 0; padding: 0; }
+      article { break-inside: avoid; }
+      a, .client { color: black; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="Résumé actions">
+    <a href="/#/home">← Portfolio</a>
+    <button type="button" id="print-resume">Print / save PDF</button>
+  </nav>
+  <main>
+    <header>
+      <h1>Nirmal Silwal</h1>
+      <p class="role">Senior Software Developer · Backend Engineering</p>
+      <div class="contact">
+        <span>Oregon, USA</span>
+        <a href="mailto:nirmalsilwal2019@gmail.com">nirmalsilwal2019@gmail.com</a>
+        <a href="https://www.linkedin.com/in/nirmal-silwal/">LinkedIn</a>
+        <a href="https://github.com/NirmalSilwal">GitHub</a>
+        <a href="https://nirmalsilwal.github.io/">Portfolio</a>
+      </div>
+      <p class="summary">Build and support backend services for industrial printing, retail fulfillment, and cloud modernization. Experience with Java and Spring Boot, event-driven systems, and production troubleshooting.</p>
+    </header>
+    <section aria-labelledby="work">
+      <h2 id="work">Experience</h2>
+      <article>
+        <div class="job-heading"><h3>Senior Software Developer · Kforce</h3><p>Present</p></div>
+        <p class="client">Client: HP PageWide Press · Digital Front End team</p>
+        <ul>
+          <li>Develop and support print-workflow services with Groovy, Grails, Java, and Kotlin.</li>
+          <li>Resolve customer issues across PageWide presses using logs, MariaDB, and Linux environments. Work with software and firmware teams on fixes and releases.</li>
+        </ul>
+      </article>
+      <article>
+        <div class="job-heading"><h3>Senior Software Developer · Kforce</h3><p>September 2025 – March 2026</p></div>
+        <p class="client">Client: The Home Depot · Customer Order Management</p>
+        <ul>
+          <li>Built Spring Boot services for shipment and return events and led a Kafka-to-Google Cloud Pub/Sub migration.</li>
+          <li>Added idempotent processing, retries, and dead-letter routing. Provisioned messaging resources with Terraform and validated downstream event delivery.</li>
+        </ul>
+      </article>
+      <article>
+        <div class="job-heading"><h3>Senior Software Engineer · Virtusa</h3><p>May 2023 – July 2025</p></div>
+        <p class="client">Client: Amazon Web Services · AWS Blu Age</p>
+        <ul>
+          <li>Supported modernization of 5.5M+ lines of COBOL into a Spring Boot monolith and resolved 150+ customer issues, reducing backlog by 30% in three months.</li>
+          <li>Improved batch throughput by 40% through PostgreSQL tuning. Used JVM profiling to reduce latency by 20% and memory use by 15%.</li>
+        </ul>
+      </article>
+      <article>
+        <div class="job-heading"><h3>Junior Software Engineer · LearningMate</h3><p>April 2019 – January 2020</p></div>
+        <ul><li>Built image-captioning workflows for accessible educational content and automated data preparation and model training, reducing manual effort by 90%.</li></ul>
+      </article>
+    </section>
+    <section aria-labelledby="skills">
+      <h2 id="skills">Technical skills</h2>
+      <p>Java, Kotlin, Groovy, Spring Boot, Grails, REST APIs, Kafka, Google Cloud Pub/Sub, PostgreSQL, MariaDB, AWS, Docker, Kubernetes, Terraform, Jenkins, Linux.</p>
+    </section>
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <p class="education"><strong>M.S., Computer Science</strong> · Maharishi International University · 2025</p>
+      <p class="education"><strong>Post Graduate Diploma, Big Data Analytics</strong> · C-DAC / SM VITA · 2019</p>
+      <p class="education"><strong>B.Tech., Computer Science &amp; Engineering, Honors</strong> · Dr. A.P.J. Abdul Kalam Technical University · 2018</p>
+    </section>
+  </main>
+  <script>document.getElementById("print-resume").addEventListener("click", () => window.print());</script>
+</body>
+</html>
