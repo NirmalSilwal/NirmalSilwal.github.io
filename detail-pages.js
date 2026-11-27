@@ -42,6 +42,35 @@ window.portfolioPages = (() => {
 
   function education(h, degrees, certificates) {
     const degree = degrees[0];
+    const credentialLogos = {
+      "udacitylogo.png": "/static/media/udacitylogo.05f7a913.png",
+      "nvidia-logo.png": "/static/media/nvidia-logo.1d2bd101.png",
+      "coursera_logo.png": "/static/media/coursera-logo.5e7f9674.png",
+      "udemy-logo.png": "/static/media/udemy-logo.0ae8fd08.png",
+      "gcp_logo.png": "/static/media/gcp_logo.0d29293e.png",
+      "niit-logo.png": "/static/media/niit-logo.4985addf.png",
+      "techmentro-logo.png": "/static/media/techmentro-logo.46403b92.png",
+    };
+    const backendProviders = new Set(["gcp_logo.png", "niit-logo.png", "techmentro-logo.png"]);
+    const credentialGroups = [
+      ["Java and cloud", certificates.filter(cert => backendProviders.has(cert.logo_path))],
+      ["Python, data, and machine learning", certificates.filter(cert => !backendProviders.has(cert.logo_path))],
+    ];
+    const certificateItem = cert => h("li", { key: cert.title },
+      h("span", { className: "pd-credential-mark", "aria-hidden": true },
+        credentialLogos[cert.logo_path]
+          ? h("img", { src: credentialLogos[cert.logo_path], alt: "", width: 28, height: 28, loading: "lazy" })
+          : cert.alt_name.slice(0, 2)
+      ),
+      h("div", null,
+        h("h4", null, cert.title),
+        h("p", null, cert.alt_name),
+        cert.certificate_link ? h("a", {
+          href: cert.certificate_link, target: "_blank", rel: "noopener noreferrer",
+          className: "pd-link", "aria-label": "View " + cert.title + " credential",
+        }, "View credential ↗") : null
+      )
+    );
     const courseRepo = "https://github.com/NirmalSilwal/MIU_MSCS";
     const coursework = [
       ["Programming in Java", "Fundamental Programming Practice and Modern Programming Practices assignments.", courseRepo + "/tree/main/FPP"],
@@ -81,10 +110,13 @@ window.portfolioPages = (() => {
           external(h, courseRepo, "View coursework repository ↗", "pd-link")
         ),
         h("div", { className: "pd-grid pd-course-grid" }, coursework.map(([title, description, url]) =>
-          h("article", { className: "pd-tile", key: title },
+          h("article", { className: "pd-tile pd-course", key: title },
             h("h3", null, title),
             h("p", null, description),
-            external(h, url, "View " + title.toLowerCase() + " coursework ↗", "pd-link")
+            h("a", {
+              href: url, target: "_blank", rel: "noopener noreferrer",
+              className: "pd-link", "aria-label": "View coursework for " + title,
+            }, "View coursework ↗")
           )
         ))
       ),
@@ -102,10 +134,10 @@ window.portfolioPages = (() => {
       ),
       h("section", { className: "pd-section", "aria-labelledby": "pd-credentials" },
         h("h2", { id: "pd-credentials" }, "Certifications and training"),
-        h("ul", { className: "pd-certificates" }, certificates.map(cert =>
-          h("li", { key: cert.title },
-            h("div", null, h("h3", null, cert.title), h("p", null, cert.alt_name)),
-            cert.certificate_link ? external(h, cert.certificate_link, "View credential ↗", "pd-link") : null
+        h("div", { className: "pd-credential-groups" }, credentialGroups.map(([title, entries]) =>
+          h("div", { key: title, className: "pd-credential-group" },
+            h("h3", null, title),
+            h("ul", { className: "pd-certificates" }, entries.map(certificateItem))
           )
         ))
       )
@@ -126,13 +158,17 @@ window.portfolioPages = (() => {
     ];
 
     function projectTile([name, title, category, description, topics]) {
+      const repo = repos.get(name);
       return h("article", { className: "pd-tile pd-project-tile", key: name },
         h("p", { className: "pd-tile-label" }, category),
         h("h3", null, title),
         h("p", null, description),
         tags(h, topics),
+        name === "system-design-resources" && repo.stars > 0
+          ? h("p", { className: "pd-stars" }, new Intl.NumberFormat("en-US").format(repo.stars), " GitHub stars")
+          : null,
         h("a", {
-          href: repos.get(name).url,
+          href: repo.url,
           target: "_blank",
           rel: "noopener noreferrer",
           className: "pd-link",

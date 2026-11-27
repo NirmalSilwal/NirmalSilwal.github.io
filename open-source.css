@@ -8,13 +8,7 @@
   --os-open: #5ae1a4;
   --os-merged: #ac91ff;
   --os-closed: #ff7987;
-  --os-chart-surface: #17253d;
-}
-.pd-opensource .pd-hero {
-  background:
-    radial-gradient(ellipse at 96% 12%, #233e60 0%, transparent 45%),
-    radial-gradient(ellipse at 93% 98%, #254e49 0%, transparent 49%),
-    linear-gradient(120deg, #111d32, #242042);
+  --os-chart-surface: #231f34;
 }
 .os-featured-grid, .os-activity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .pd-opensource [data-status="open"] {
@@ -35,7 +29,7 @@
 .os-featured-grid .os-contribution {
   position: relative;
   border-color: color-mix(in srgb, var(--os-status-color), var(--pd-line) 60%);
-  background: linear-gradient(145deg, var(--os-status-wash), #f5f8fc 68%);
+  background: linear-gradient(145deg, var(--os-status-wash), var(--pd-surface) 68%);
 }
 .os-contribution::before {
   position: absolute;
@@ -74,7 +68,7 @@
   padding: clamp(13px, 3vw, 30px);
   border-radius: 14px;
   color: #f6faff;
-  background: #111c31;
+  background: #1c1929;
 }
 .os-dashboard::before {
   position: absolute;
@@ -91,7 +85,7 @@
 .os-as-of { margin: 0; color: #d1deeb; font-size: .86rem; }
 .os-dashboard .os-counts {
   align-items: stretch;
-  background: #17253ded;
+  background: #231f34ed;
   border-color: #6f84a566;
 }
 .os-counts h3 { color: #f3f8ff; }

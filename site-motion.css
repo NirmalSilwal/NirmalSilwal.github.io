@@ -36,14 +36,14 @@
   }
   :is(.ph-project, .pd-project-tile, .os-featured-grid .pd-tile):focus-within {
     translate: 0 -3px;
-    border-color: #8daed6;
-    box-shadow: 0 10px 20px #162c4c12;
+    border-color: color-mix(in srgb, var(--ph-accent) 50%, var(--ph-line));
+    box-shadow: 0 10px 20px #342a2116;
   }
   @media (hover: hover) {
     :is(.ph-project, .pd-project-tile, .os-featured-grid .pd-tile):hover {
       translate: 0 -3px;
-      border-color: #8daed6;
-      box-shadow: 0 10px 20px #162c4c12;
+      border-color: color-mix(in srgb, var(--ph-accent) 50%, var(--ph-line));
+      box-shadow: 0 10px 20px #342a2116;
     }
   }
 }

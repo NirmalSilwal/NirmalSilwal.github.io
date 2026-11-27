@@ -21,12 +21,12 @@ window.renderPortfolioExperience = function renderPortfolioExperience(h) {
       h("div", { className: "px-card-body" },
         h("p", { className: "px-description" }, role.description),
         role.highlights?.length ? highlights(role.highlights) : null,
-        role.details?.map(group =>
+        role.details?.length ? h("div", { className: "px-detail-grid" }, role.details.map(group =>
           h("div", { className: "px-detail", key: group.title },
             h("h4", null, group.title),
             highlights(group.items)
           )
-        ),
+        )) : null,
         role.video
           ? h("a", { className: "px-video pd-link", href: role.video, target: "_blank", rel: "noopener noreferrer" }, "Watch the robotics project on YouTube ↗")
           : null
